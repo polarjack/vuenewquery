@@ -14,7 +14,8 @@ var people = new Vue({
   el: '#table-body',
   data: {
     allselected: false,
-    people: []
+    people: [],
+    tofilt: ''
   },
   methods: {
     selectAllOrNot: function () {
@@ -68,6 +69,13 @@ var people = new Vue({
       var rows = firstRow.concat(otherRows)
       console.log(rows)
       generateBlobAndSave(rows, "下載資料")
+    },
+    filtTheResult: function() {
+      var self = this;
+
+      self.people = self.people.map((v, i) => {
+        
+      })
     }
   }
 })
